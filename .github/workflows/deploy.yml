@@ -17,7 +17,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.29.0' # Matches your environment
+          flutter-version: '3.35.5' # Matches your local environment for Dart 3.9.2 support
 
       - name: Install dependencies 📦
         run: flutter pub get
