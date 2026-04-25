@@ -26,7 +26,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Web 🏗️
-        run: flutter build web --release --base-href "/printvox_lp/" --web-renderer html
+        run: flutter build web --release --base-href "/printvox_lp/"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
