@@ -57,6 +57,18 @@ class _LandingContentState extends State<_LandingContent> {
   }
 
   void _onScroll() {
+    if (!_scrollController.hasClients) return;
+
+    final scrollPosition = _scrollController.offset;
+    
+    // Quick escape if we're at the top
+    if (scrollPosition < 50) {
+      if (_activeSection != 'services') {
+        setState(() => _activeSection = 'services');
+      }
+      return;
+    }
+
     final sections = {
       'services': _ideasKey,
       'categories': _sectorsKey,
@@ -68,18 +80,18 @@ class _LandingContentState extends State<_LandingContent> {
     String? currentSection;
     double minDistance = double.infinity;
 
-    sections.forEach((name, key) {
-      final context = key.currentContext;
+    for (var entry in sections.entries) {
+      final context = entry.value.currentContext;
       if (context != null) {
         final box = context.findRenderObject() as RenderBox;
         final position = box.localToGlobal(Offset.zero).dy;
-        final distance = (position - 80).abs();
-        if (distance < 200 && distance < minDistance) {
+        final distance = (position - 100).abs();
+        if (distance < 300 && distance < minDistance) {
           minDistance = distance;
-          currentSection = name;
+          currentSection = entry.key;
         }
       }
-    });
+    }
 
     if (currentSection != null && currentSection != _activeSection) {
       setState(() {
@@ -142,19 +154,23 @@ class _LandingContentState extends State<_LandingContent> {
                 ),
               ),
               SliverToBoxAdapter(
-                child: IdeasWidget(key: _ideasKey),
+                child: RepaintBoundary(child: IdeasWidget(key: _ideasKey)),
               ),
               SliverToBoxAdapter(
-                child: SectorsWidget(key: _sectorsKey, sectors: state.sectors),
+                child: RepaintBoundary(
+                  child: SectorsWidget(key: _sectorsKey, sectors: state.sectors),
+                ),
               ),
               SliverToBoxAdapter(
-                child: PortfolioWidget(key: _portfolioKey, items: state.portfolioItems),
+                child: RepaintBoundary(
+                  child: PortfolioWidget(key: _portfolioKey, items: state.portfolioItems),
+                ),
               ),
               SliverToBoxAdapter(
-                child: WhyUsWidget(key: _whyUsKey),
+                child: RepaintBoundary(child: WhyUsWidget(key: _whyUsKey)),
               ),
               SliverToBoxAdapter(
-                child: ContactSectionWidget(key: _contactKey),
+                child: RepaintBoundary(child: ContactSectionWidget(key: _contactKey)),
               ),
               const SliverToBoxAdapter(child: FooterWidget()),
             ],
