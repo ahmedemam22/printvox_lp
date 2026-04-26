@@ -178,7 +178,12 @@ class _LandingContentState extends State<_LandingContent> {
                 ),
               ),
               SliverToBoxAdapter(
-                child: RepaintBoundary(child: IdeasWidget(key: _ideasKey)),
+                child: RepaintBoundary(
+                  child: IdeasWidget(
+                    key: _ideasKey,
+                    onExploreTap: () => _scrollToSection(_sectorsKey, 'categories'),
+                  ),
+                ),
               ),
               SliverToBoxAdapter(
                 child: RepaintBoundary(

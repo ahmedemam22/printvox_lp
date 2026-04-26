@@ -7,18 +7,23 @@ class ContactInfoItem extends StatelessWidget {
   final String subtitle;
   final bool isPhone;
 
+  final VoidCallback? onTap;
+
   const ContactInfoItem({
     super.key,
     required this.icon,
     required this.title,
     required this.subtitle,
     this.isPhone = false,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
@@ -58,6 +63,7 @@ class ContactInfoItem extends StatelessWidget {
           ],
         ),
       ],
+    ),
     );
   }
 }

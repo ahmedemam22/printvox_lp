@@ -7,7 +7,9 @@ import 'widgets/stat_item.dart';
 import 'widgets/ideas_divider.dart';
 
 class IdeasWidget extends StatelessWidget {
-  const IdeasWidget({super.key});
+  final VoidCallback? onExploreTap;
+
+  const IdeasWidget({super.key, this.onExploreTap});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +82,7 @@ class IdeasWidget extends StatelessWidget {
 
                     /// CTA BUTTON
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: onExploreTap,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         foregroundColor: Colors.white,

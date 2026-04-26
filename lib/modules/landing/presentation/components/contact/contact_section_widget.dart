@@ -60,6 +60,12 @@ class ContactSectionWidget extends StatelessWidget {
                   title: context.l10n.lblPhone,
                   subtitle: context.l10n.valPhone,
                   isPhone: true,
+                  onTap: () async {
+                    final Uri tel = Uri.parse("tel:+201100113901");
+                    if (await canLaunchUrl(tel)) {
+                      await launchUrl(tel);
+                    }
+                  },
                 ),
                 const SizedBox(height: 20),
                 ContactInfoItem(

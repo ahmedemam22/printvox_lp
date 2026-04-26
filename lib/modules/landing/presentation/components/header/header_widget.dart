@@ -36,7 +36,7 @@ class HeaderWidget extends StatelessWidget {
         children: [
           // Action Button
           ElevatedButton(
-            onPressed: () {},
+            onPressed: onContactTap,
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
               foregroundColor: Colors.white,
