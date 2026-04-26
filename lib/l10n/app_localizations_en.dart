@@ -58,13 +58,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lblLocation => 'Location';
 
   @override
-  String get valLocation => 'Al Malaz, 60th St, Riyadh 12835';
+  String get valLocation => 'Nahia st., Bolak Eldakror';
 
   @override
   String get lblPhone => 'Mobile';
 
   @override
-  String get valPhone => '+966 54 821 9900';
+  String get valPhone => '+20 110 011 3901';
 
   @override
   String get lblEmail => 'Email';
@@ -155,7 +155,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tabAll => 'All';
 
   @override
-  String get whyUsTitle => 'Why choose us from 850 clients?';
+  String get whyUsTitle => 'Why choose us from clients?';
 
   @override
   String get whyUsSubtitle =>
@@ -183,9 +183,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'A team of designers turns your idea into a complete visual identity.';
 
   @override
-  String get whyUsDeliveryTitle => 'Delivery to Kingdom';
+  String get whyUsDeliveryTitle => 'Delivery to Cities';
 
   @override
   String get whyUsDeliveryDesc =>
-      'Safe shipping to all cities in the Kingdom with live tracking.';
+      'Safe shipping to all cities in the Cities with live tracking.';
 }

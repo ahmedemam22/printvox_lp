@@ -10,6 +10,7 @@ class Assets {
   static const String gifLogoLoading = 'assets/gif/logo_loading.gif';
   static const String iconsLogo = 'assets/icons/logo.png';
   static const String iconsLogoChar = 'assets/icons/logo_char.png';
+  static const String iconsWhatsapp = 'assets/icons/whatsapp.svg';
   static const String imagesBakeryBg = 'assets/images/bakery_bg.png';
   static const String imagesClientTrust = 'assets/images/client_trust.png';
   static const String imagesClothingBg = 'assets/images/clothing_bg.png';

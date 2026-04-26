@@ -60,14 +60,14 @@ class HeaderWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 HeaderLink(
-                  title: context.l10n.navCategories,
-                  onTap: onCategoriesTap,
-                  isSelected: activeSection == 'categories',
-                ),
-                HeaderLink(
                   title: context.l10n.navServices,
                   onTap: onServicesTap,
                   isSelected: activeSection == 'services',
+                ),
+                HeaderLink(
+                  title: context.l10n.navCategories,
+                  onTap: onCategoriesTap,
+                  isSelected: activeSection == 'categories',
                 ),
                 HeaderLink(
                   title: context.l10n.navPortfolio,

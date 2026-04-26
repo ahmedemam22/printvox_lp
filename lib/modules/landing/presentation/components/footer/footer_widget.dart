@@ -74,7 +74,7 @@ class FooterWidget extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                'مطبعة سعودية متخصصة في حلول الطباعة والتغليف منذ\nعام 2018. نخدم أكثر من 850 علامة تجارية في المملكة.',
+                'مطبعة مصرية متخصصة في حلول الطباعة والتغليف منذ اكثر من ٢٠ سنة',
                 textAlign: TextAlign.right,
                 style: TextStyle(color: Colors.white70, height: 1.6),
               ),

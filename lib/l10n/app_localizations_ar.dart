@@ -15,7 +15,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get navCategories => 'الأقسام';
 
   @override
-  String get navServices => 'خدماتنا';
+  String get navServices => 'نبذة عنا';
 
   @override
   String get navPortfolio => 'أعمالنا';
@@ -58,13 +58,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lblLocation => 'الموقع';
 
   @override
-  String get valLocation => 'حي الملز شارع الستين، الرياض 12835';
+  String get valLocation => 'شارع ناهيا، بولاق الدكرور';
 
   @override
   String get lblPhone => 'الجوال';
 
   @override
-  String get valPhone => '+966 54 821 9900';
+  String get valPhone => '+20 110 011 3901';
 
   @override
   String get lblEmail => 'البريد';
@@ -155,7 +155,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get tabAll => 'الكل';
 
   @override
-  String get whyUsTitle => 'لماذا يختارنا أكثر من 850 عميل؟';
+  String get whyUsTitle => 'لماذا يختارنا العملاء؟';
 
   @override
   String get whyUsSubtitle =>
@@ -165,7 +165,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get whyUsFastTitle => 'تسليم سريع';
 
   @override
-  String get whyUsFastDesc => 'خلال 48 ساعة للطلبات القياسية داخل الرياض.';
+  String get whyUsFastDesc => 'خلال 48 ساعة للطلبات القياسية داخل القاهرة.';
 
   @override
   String get whyUsQualityTitle => 'جودة مضمونة';
@@ -181,8 +181,8 @@ class AppLocalizationsAr extends AppLocalizations {
       'فريق مصممين يحوّل فكرتك إلى هوية بصرية متكاملة.';
 
   @override
-  String get whyUsDeliveryTitle => 'توصيل للمملكة';
+  String get whyUsDeliveryTitle => 'توصيل للمدن';
 
   @override
-  String get whyUsDeliveryDesc => 'شحن آمن لجميع مدن المملكة مع تتبع مباشر.';
+  String get whyUsDeliveryDesc => 'شحن آمن لجميع المدن مع تتبع مباشر.';
 }

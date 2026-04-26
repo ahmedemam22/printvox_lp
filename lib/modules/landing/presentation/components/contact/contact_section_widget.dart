@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../../../../core/constants/assets.dart';
 import '../../../../../core/constants/colors.dart';
 import '../../../../../core/extensions/localization_extension.dart';
 import '../../../../../core/extensions/responsive_extension.dart';
@@ -56,6 +59,7 @@ class ContactSectionWidget extends StatelessWidget {
                   icon: Icons.phone,
                   title: context.l10n.lblPhone,
                   subtitle: context.l10n.valPhone,
+                  isPhone: true,
                 ),
                 const SizedBox(height: 20),
                 ContactInfoItem(
@@ -65,8 +69,17 @@ class ContactSectionWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
                 ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.chat),
+                  onPressed: () async {
+                    final Uri whatsapp = Uri.parse("https://wa.me/201100113901");
+                    if (await canLaunchUrl(whatsapp)) {
+                      await launchUrl(whatsapp, mode: LaunchMode.externalApplication);
+                    }
+                  },
+                  icon: SvgPicture.asset(
+                    AppAssets.iconsWhatsapp,
+                    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    width: 20,
+                  ),
                   label: Text(context.l10n.btnWhatsapp),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.whatsappGreen,

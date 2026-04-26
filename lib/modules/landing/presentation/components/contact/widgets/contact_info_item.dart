@@ -5,12 +5,14 @@ class ContactInfoItem extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
+  final bool isPhone;
 
   const ContactInfoItem({
     super.key,
     required this.icon,
     required this.title,
     required this.subtitle,
+    this.isPhone = false,
   });
 
   @override
@@ -37,12 +39,22 @@ class ContactInfoItem extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 4),
-            Text(
-              subtitle,
-              style: const TextStyle(
-                color: Colors.white70,
-              ),
-            ),
+            isPhone
+                ? Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: Text(
+                      subtitle,
+                      style: const TextStyle(
+                        color: Colors.white70,
+                      ),
+                    ),
+                  )
+                : Text(
+                    subtitle,
+                    style: const TextStyle(
+                      color: Colors.white70,
+                    ),
+                  ),
           ],
         ),
       ],

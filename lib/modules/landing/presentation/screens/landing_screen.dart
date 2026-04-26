@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/constants/colors.dart';
 import '../../../../di/injection.dart';
 import '../bloc/landing_bloc.dart';
 import '../bloc/landing_event.dart';
@@ -12,6 +13,9 @@ import '../components/portfolio/portfolio_widget.dart';
 import '../components/why_us/why_us_widget.dart';
 import '../components/shared/landing_background.dart';
 import '../components/footer/footer_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../../../../core/constants/assets.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -22,6 +26,20 @@ class LandingScreen extends StatelessWidget {
       create: (context) => sl<LandingBloc>()..add(FetchLandingData()),
       child: Scaffold(
         backgroundColor: const Color(0xFF07070F),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () async {
+            final Uri whatsapp = Uri.parse("https://wa.me/201100113901");
+            if (await canLaunchUrl(whatsapp)) {
+              await launchUrl(whatsapp, mode: LaunchMode.externalApplication);
+            }
+          },
+          backgroundColor: AppColors.whatsappGreen,
+          child: SvgPicture.asset(
+            AppAssets.iconsWhatsapp,
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            width: 24,
+          ),
+        ),
         body: Stack(
           children: [
             const LandingBackground(),

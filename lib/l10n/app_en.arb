@@ -16,9 +16,9 @@
   "heroSendOrder": "Send Request",
   "btnWhatsapp": "Message us on WhatsApp",
   "lblLocation": "Location",
-  "valLocation": "Al Malaz, 60th St, Riyadh 12835",
+  "valLocation": "Nahia st., Bolak Eldakror",
   "lblPhone": "Mobile",
-  "valPhone": "+966 54 821 9900",
+  "valPhone": "+20 110 011 3901",
   "lblEmail": "Email",
   "valEmail": "hello@printvox.sa",
   "sectCategoriesTitle": "Sectors we serve",
@@ -48,7 +48,7 @@
   "tabBranding": "Branding",
   "tabPackaging": "Packaging",
   "tabAll": "All",
-  "whyUsTitle": "Why choose us from 850 clients?",
+  "whyUsTitle": "Why choose us from clients?",
   "whyUsSubtitle": "We don’t just print - we help you build a complete brand experience, from the first design touch to the product delivery.",
   "whyUsFastTitle": "Fast Delivery",
   "whyUsFastDesc": "Within 48 hours for standard orders inside Riyadh.",
@@ -56,6 +56,6 @@
   "whyUsQualityDesc": "Food-friendly inks and internationally certified materials.",
   "whyUsDesignTitle": "Memorable Design",
   "whyUsDesignDesc": "A team of designers turns your idea into a complete visual identity.",
-  "whyUsDeliveryTitle": "Delivery to Kingdom",
-  "whyUsDeliveryDesc": "Safe shipping to all cities in the Kingdom with live tracking."
+  "whyUsDeliveryTitle": "Delivery to Cities",
+  "whyUsDeliveryDesc": "Safe shipping to all cities in the Cities with live tracking."
 }

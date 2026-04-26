@@ -113,7 +113,7 @@ abstract class AppLocalizations {
   /// No description provided for @navServices.
   ///
   /// In ar, this message translates to:
-  /// **'خدماتنا'**
+  /// **'نبذة عنا'**
   String get navServices;
 
   /// No description provided for @navPortfolio.
@@ -197,7 +197,7 @@ abstract class AppLocalizations {
   /// No description provided for @valLocation.
   ///
   /// In ar, this message translates to:
-  /// **'حي الملز شارع الستين، الرياض 12835'**
+  /// **'شارع ناهيا، بولاق الدكرور'**
   String get valLocation;
 
   /// No description provided for @lblPhone.
@@ -209,7 +209,7 @@ abstract class AppLocalizations {
   /// No description provided for @valPhone.
   ///
   /// In ar, this message translates to:
-  /// **'+966 54 821 9900'**
+  /// **'+20 110 011 3901'**
   String get valPhone;
 
   /// No description provided for @lblEmail.
@@ -389,7 +389,7 @@ abstract class AppLocalizations {
   /// No description provided for @whyUsTitle.
   ///
   /// In ar, this message translates to:
-  /// **'لماذا يختارنا أكثر من 850 عميل؟'**
+  /// **'لماذا يختارنا العملاء؟'**
   String get whyUsTitle;
 
   /// No description provided for @whyUsSubtitle.
@@ -407,7 +407,7 @@ abstract class AppLocalizations {
   /// No description provided for @whyUsFastDesc.
   ///
   /// In ar, this message translates to:
-  /// **'خلال 48 ساعة للطلبات القياسية داخل الرياض.'**
+  /// **'خلال 48 ساعة للطلبات القياسية داخل القاهرة.'**
   String get whyUsFastDesc;
 
   /// No description provided for @whyUsQualityTitle.
@@ -437,13 +437,13 @@ abstract class AppLocalizations {
   /// No description provided for @whyUsDeliveryTitle.
   ///
   /// In ar, this message translates to:
-  /// **'توصيل للمملكة'**
+  /// **'توصيل للمدن'**
   String get whyUsDeliveryTitle;
 
   /// No description provided for @whyUsDeliveryDesc.
   ///
   /// In ar, this message translates to:
-  /// **'شحن آمن لجميع مدن المملكة مع تتبع مباشر.'**
+  /// **'شحن آمن لجميع المدن مع تتبع مباشر.'**
   String get whyUsDeliveryDesc;
 }
 
