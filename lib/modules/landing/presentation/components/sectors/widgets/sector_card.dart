@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../../core/constants/colors.dart';
 import '../../../../domain/entities/content_item.dart';
-import '../../../../../../core/extensions/localization_extension.dart';
 
 class SectorCard extends StatefulWidget {
   final SectorItem sector;
@@ -47,7 +46,7 @@ class _SectorCardState extends State<SectorCard> {
                 image: widget.sector.imageUrl.startsWith('assets') 
                   ? AssetImage(widget.sector.imageUrl) as ImageProvider
                   : NetworkImage(widget.sector.imageUrl),
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 colorFilter: ColorFilter.mode(
                   Colors.black.withAlpha(_isHovered ? 20 : 50), 
                   BlendMode.darken,
@@ -89,28 +88,7 @@ class _SectorCardState extends State<SectorCard> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  AnimatedContainer(
-                    duration: const Duration(milliseconds: 300),
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: _isHovered ? AppColors.primary : Colors.transparent,
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(
-                        color: _isHovered ? AppColors.primary : Colors.white30,
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          context.l10n.btnSeeMore,
-                          style: const TextStyle(color: Colors.white, fontSize: 12),
-                        ),
-                        const SizedBox(width: 8),
-                        const Icon(Icons.arrow_forward_ios, size: 10, color: Colors.white),
-                      ],
-                    ),
-                  ),
+
                 ],
               ),
             ),

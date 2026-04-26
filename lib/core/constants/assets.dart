@@ -33,4 +33,5 @@ class AppAssets {
   static const String imagesCosmeticsBg = 'assets/images/cosmetics_bg.png';
   static const String iconsLogoChar = 'assets/icons/logo_char.png';
   static const String iconsLogo = 'assets/icons/logo.png';
+  static const String gifLogoLoading = 'assets/gif/logo_loading.gif';
 }

@@ -7,6 +7,7 @@ class Assets {
   static const String brandingMockup7 = 'assets/images/branding/mockup_7.png';
   static const String brandingMockup8 = 'assets/images/branding/mockup_8.png';
   static const String brandingMockup9 = 'assets/images/branding/mockup_9.png';
+  static const String gifLogoLoading = 'assets/gif/logo_loading.gif';
   static const String iconsLogo = 'assets/icons/logo.png';
   static const String iconsLogoChar = 'assets/icons/logo_char.png';
   static const String imagesBakeryBg = 'assets/images/bakery_bg.png';

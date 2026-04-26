@@ -16,14 +16,12 @@ class PortfolioWidget extends StatefulWidget {
 }
 
 class _PortfolioWidgetState extends State<PortfolioWidget> {
-  String _selectedCategory = 'All';
+  String _selectedCategory = 'Packaging';
 
   @override
   Widget build(BuildContext context) {
     // Filter logic
-    final filteredItems = _selectedCategory == 'All'
-        ? widget.items
-        : widget.items.where((item) => item.category == _selectedCategory).toList();
+    final filteredItems = widget.items.where((item) => item.category == _selectedCategory).toList();
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 40),
@@ -56,11 +54,6 @@ class _PortfolioWidgetState extends State<PortfolioWidget> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 TabButton(
-                  title: context.l10n.tabAll, 
-                  isSelected: _selectedCategory == 'All',
-                  onTap: () => setState(() => _selectedCategory = 'All'),
-                ),
                 TabButton(
                   title: context.l10n.tabPackaging, 
                   isSelected: _selectedCategory == 'Packaging',

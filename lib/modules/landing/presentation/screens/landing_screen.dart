@@ -130,7 +130,13 @@ class _LandingContentState extends State<_LandingContent> {
     return BlocBuilder<LandingBloc, LandingState>(
       builder: (context, state) {
         if (state is LandingLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return Center(
+            child: Image.asset(
+              'assets/gif/logo_loading.gif',
+              width: 150,
+              height: 150,
+            ),
+          );
         } else if (state is LandingError) {
           return Center(child: Text(state.message, style: const TextStyle(color: Colors.white)));
         } else if (state is LandingLoaded) {
@@ -167,6 +173,7 @@ class _LandingContentState extends State<_LandingContent> {
                 ),
               ),
               SliverToBoxAdapter(
+
                 child: RepaintBoundary(child: WhyUsWidget(key: _whyUsKey)),
               ),
               SliverToBoxAdapter(
