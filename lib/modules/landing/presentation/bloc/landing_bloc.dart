@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/usecases/usecase.dart';
-import '../../domain/usecases/get_content_usecases.dart';
-import '../../domain/usecases/submit_contact_form_usecase.dart';
-import 'landing_event.dart';
-import 'landing_state.dart';
+import 'package:printvox_lp/core/usecases/usecase.dart';
+import 'package:printvox_lp/modules/landing/domain/usecases/get_content_usecases.dart';
+import 'package:printvox_lp/modules/landing/domain/usecases/submit_contact_form_usecase.dart';
+import 'package:printvox_lp/modules/landing/presentation/bloc/landing_event.dart';
+import 'package:printvox_lp/modules/landing/presentation/bloc/landing_state.dart';
 
 class LandingBloc extends Bloc<LandingEvent, LandingState> {
   final GetSectorsUseCase getSectorsUseCase;

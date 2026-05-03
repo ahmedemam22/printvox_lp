@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../../core/constants/colors.dart';
-import '../../../../../../core/extensions/localization_extension.dart';
-import '../../../../../../core/utils/dialog_utils.dart';
-import '../../../bloc/landing_bloc.dart';
-import '../../../bloc/landing_event.dart';
-import '../../../bloc/landing_state.dart';
-import 'custom_text_field.dart';
+import 'package:printvox_lp/core/constants/colors.dart';
+import 'package:printvox_lp/core/extensions/localization_extension.dart';
+import 'package:printvox_lp/core/utils/dialog_utils.dart';
+import 'package:printvox_lp/modules/landing/presentation/bloc/landing_bloc.dart';
+import 'package:printvox_lp/modules/landing/presentation/bloc/landing_event.dart';
+import 'package:printvox_lp/modules/landing/presentation/bloc/landing_state.dart';
+import 'package:printvox_lp/modules/landing/presentation/components/contact/widgets/custom_text_field.dart';
 
 class ContactFormWidget extends StatefulWidget {
   const ContactFormWidget({super.key});
