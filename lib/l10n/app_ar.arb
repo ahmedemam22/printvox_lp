@@ -11,13 +11,13 @@
   "heroSubtitle": "اترك بياناتك وسنتواصل معك خلال ساعة عمل، أو راسلنا مباشرة على واتساب\nلعرض سعر فوري.",
   "heroGetQuote": "اطلب عرض سعر",
   "heroFullName": "الاسم الكامل",
-  "heroPhone": "رقم الجوال",
+  "heroPhone": "رقم الموبيل",
   "heroOrderDetails": "تفاصيل طلبك",
   "heroSendOrder": "أرسل الطلب",
   "btnWhatsapp": "راسلنا على واتساب",
   "lblLocation": "الموقع",
   "valLocation": "شارع ناهيا، بولاق الدكرور",
-  "lblPhone": "الجوال",
+  "lblPhone": "الموبيل",
   "valPhone": "+20 110 011 3901",
   "lblEmail": "البريد",
   "valEmail": "hello@printvox.sa",
@@ -57,5 +57,8 @@
   "whyUsDesignTitle": "تصميم لا يُنسى",
   "whyUsDesignDesc": "فريق مصممين يحوّل فكرتك إلى هوية بصرية متكاملة.",
   "whyUsDeliveryTitle": "توصيل للمدن",
-  "whyUsDeliveryDesc": "شحن آمن لجميع المدن مع تتبع مباشر."
+  "whyUsDeliveryDesc": "شحن آمن لجميع المدن مع تتبع مباشر.",
+  "formSuccessTitle": "تم إرسال طلبك!",
+  "formSuccessMessage": "سيتم التواصل معك في أقرب وقت.",
+  "formErrorMessage": "حدث خطأ أثناء الإرسال."
 }

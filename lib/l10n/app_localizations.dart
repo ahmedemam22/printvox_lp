@@ -167,7 +167,7 @@ abstract class AppLocalizations {
   /// No description provided for @heroPhone.
   ///
   /// In ar, this message translates to:
-  /// **'رقم الجوال'**
+  /// **'رقم الموبيل'**
   String get heroPhone;
 
   /// No description provided for @heroOrderDetails.
@@ -203,7 +203,7 @@ abstract class AppLocalizations {
   /// No description provided for @lblPhone.
   ///
   /// In ar, this message translates to:
-  /// **'الجوال'**
+  /// **'الموبيل'**
   String get lblPhone;
 
   /// No description provided for @valPhone.
@@ -445,6 +445,24 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'شحن آمن لجميع المدن مع تتبع مباشر.'**
   String get whyUsDeliveryDesc;
+
+  /// No description provided for @formSuccessTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إرسال طلبك!'**
+  String get formSuccessTitle;
+
+  /// No description provided for @formSuccessMessage.
+  ///
+  /// In ar, this message translates to:
+  /// **'سيتم التواصل معك في أقرب وقت.'**
+  String get formSuccessMessage;
+
+  /// No description provided for @formErrorMessage.
+  ///
+  /// In ar, this message translates to:
+  /// **'حدث خطأ أثناء الإرسال.'**
+  String get formErrorMessage;
 }
 
 class _AppLocalizationsDelegate

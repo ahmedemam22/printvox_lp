@@ -133,7 +133,7 @@ class IdeasWidget extends StatelessWidget {
             direction: context.isDesktop ? Axis.horizontal : Axis.vertical,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              StatItem(value: '7', label: context.l10n.statYears),
+              StatItem(value: '20', label: context.l10n.statYears),
 
               if (context.isDesktop) const IdeasDivider(),
               if (!context.isDesktop) const SizedBox(height: 24),

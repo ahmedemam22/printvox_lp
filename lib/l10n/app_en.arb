@@ -57,5 +57,8 @@
   "whyUsDesignTitle": "Memorable Design",
   "whyUsDesignDesc": "A team of designers turns your idea into a complete visual identity.",
   "whyUsDeliveryTitle": "Delivery to Cities",
-  "whyUsDeliveryDesc": "Safe shipping to all cities in the Cities with live tracking."
+  "whyUsDeliveryDesc": "Safe shipping to all cities with live tracking.",
+  "formSuccessTitle": "Order Sent!",
+  "formSuccessMessage": "We will contact you as soon as possible.",
+  "formErrorMessage": "An error occurred while sending."
 }

@@ -22,6 +22,7 @@ class _WhyUsWidgetState extends State<WhyUsWidget> {
     return VisibilityDetector(
       key: const Key('why-us-visibility-key'),
       onVisibilityChanged: (info) {
+        if (!mounted) return;
         if (info.visibleFraction > 0.1) {
           if (!_startAnimation) {
             setState(() {

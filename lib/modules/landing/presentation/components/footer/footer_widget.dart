@@ -24,9 +24,10 @@ class FooterWidget extends StatelessWidget {
             children: [
               Text(context.l10n.navCategories, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18)),
               const SizedBox(height: 24),
-              FooterLink(title: context.l10n.catPharma),
-              FooterLink(title: context.l10n.catBeach),
+              FooterLink(title: context.l10n.catBakeries),
+              FooterLink(title: context.l10n.catCorporate),
               FooterLink(title: context.l10n.catRetail),
+              FooterLink(title: 'المطاعم والكافيهات'),
             ],
           ),
           
@@ -48,7 +49,10 @@ class FooterWidget extends StatelessWidget {
             children: [
               Text(context.l10n.navContact, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18)),
               const SizedBox(height: 24),
-              Text(context.l10n.valPhone, style: const TextStyle(color: Colors.white70)),
+              Directionality(
+                textDirection: TextDirection.ltr,
+                child: Text(context.l10n.valPhone, style: const TextStyle(color: Colors.white70)),
+              ),
               const SizedBox(height: 12),
               Text(context.l10n.valEmail, style: const TextStyle(color: Colors.white70)),
               const SizedBox(height: 12),

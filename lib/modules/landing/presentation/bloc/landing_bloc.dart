@@ -1,18 +1,22 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../domain/usecases/get_content_usecases.dart';
+import '../../domain/usecases/submit_contact_form_usecase.dart';
 import 'landing_event.dart';
 import 'landing_state.dart';
 
 class LandingBloc extends Bloc<LandingEvent, LandingState> {
   final GetSectorsUseCase getSectorsUseCase;
   final GetPortfolioUseCase getPortfolioUseCase;
+  final SubmitContactFormUseCase submitContactFormUseCase;
 
   LandingBloc({
     required this.getSectorsUseCase,
     required this.getPortfolioUseCase,
+    required this.submitContactFormUseCase,
   }) : super(LandingInitial()) {
     on<FetchLandingData>(_onFetchLandingData);
+    on<SubmitForm>(_onSubmitForm);
   }
 
   Future<void> _onFetchLandingData(
@@ -36,5 +40,24 @@ class LandingBloc extends Bloc<LandingEvent, LandingState> {
         );
       },
     );
+  }
+
+  Future<void> _onSubmitForm(
+    SubmitForm event,
+    Emitter<LandingState> emit,
+  ) async {
+
+    
+    emit(FormSubmitting());
+
+    final result = await submitContactFormUseCase(event.data);
+
+    result.fold(
+      (failure) => emit(FormError(message: failure.message)),
+      (_) => emit(FormSubmitted()),
+    );
+
+    // If we were in a loaded state, we might want to return to it
+    // But for now, the UI will handle the success/error dialogs based on these states.
   }
 }

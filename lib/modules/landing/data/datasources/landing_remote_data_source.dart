@@ -1,8 +1,13 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import '../../../../core/constants/apis.dart';
+import '../../../../core/error/exceptions.dart';
 import '../../domain/entities/content_item.dart';
 
 abstract class LandingRemoteDataSource {
   Future<List<SectorItem>> fetchSectors();
   Future<List<PortfolioItem>> fetchPortfolioItems();
+  Future<void> submitContactForm(Map<String, dynamic> data);
 }
 
 class LandingRemoteDataSourceImpl implements LandingRemoteDataSource {
@@ -188,5 +193,25 @@ class LandingRemoteDataSourceImpl implements LandingRemoteDataSource {
         imageUrl: 'assets/images/large_format/mockup_20.png',
       ),
     ];
+  }
+
+  @override
+  Future<void> submitContactForm(Map<String, dynamic> data) async {
+    final response = await http.post(
+      Uri.parse(AppApi.googleSheetsUrl),
+      headers: {
+        // We use text/plain to bypass CORS pre-flight checks on Flutter Web
+        "Content-Type": "text/plain",
+      },
+      body: jsonEncode({
+        "name": data["name"],
+        "phone": data["phone"],
+        "details": data["details"],
+      }),
+    );
+
+    if (response.statusCode >= 400) {
+      throw ServerException('Failed to submit form');
+    }
   }
 }

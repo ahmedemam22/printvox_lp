@@ -187,5 +187,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get whyUsDeliveryDesc =>
-      'Safe shipping to all cities in the Cities with live tracking.';
+      'Safe shipping to all cities with live tracking.';
+
+  @override
+  String get formSuccessTitle => 'Order Sent!';
+
+  @override
+  String get formSuccessMessage => 'We will contact you as soon as possible.';
+
+  @override
+  String get formErrorMessage => 'An error occurred while sending.';
 }

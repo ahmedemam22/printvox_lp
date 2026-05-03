@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:printvox_lp/core/constants/values.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../../core/constants/assets.dart';
 import '../../../../../core/constants/colors.dart';
@@ -58,10 +59,10 @@ class ContactSectionWidget extends StatelessWidget {
                 ContactInfoItem(
                   icon: Icons.phone,
                   title: context.l10n.lblPhone,
-                  subtitle: context.l10n.valPhone,
+                  subtitle: "+${AppValues.mobile}",
                   isPhone: true,
                   onTap: () async {
-                    final Uri tel = Uri.parse("tel:+201100113901");
+                    final Uri tel = Uri.parse("tel:+${AppValues.mobile}");
                     if (await canLaunchUrl(tel)) {
                       await launchUrl(tel);
                     }
@@ -71,12 +72,18 @@ class ContactSectionWidget extends StatelessWidget {
                 ContactInfoItem(
                   icon: Icons.email,
                   title: context.l10n.lblEmail,
-                  subtitle: context.l10n.valEmail,
+                  subtitle: AppValues.email,
+                  onTap: () async {
+                    final Uri email = Uri.parse("mailto:${AppValues.email}");
+                    if (await canLaunchUrl(email)) {
+                      await launchUrl(email);
+                    }
+                  },
                 ),
                 const SizedBox(height: 40),
                 ElevatedButton.icon(
                   onPressed: () async {
-                    final Uri whatsapp = Uri.parse("https://wa.me/201100113901");
+                    final Uri whatsapp = Uri.parse("https://wa.me/${AppValues.mobile}");
                     if (await canLaunchUrl(whatsapp)) {
                       await launchUrl(whatsapp, mode: LaunchMode.externalApplication);
                     }

@@ -8,3 +8,12 @@ abstract class LandingEvent extends Equatable {
 }
 
 class FetchLandingData extends LandingEvent {}
+
+class SubmitForm extends LandingEvent {
+  final Map<String, dynamic> data;
+
+  const SubmitForm(this.data);
+
+  @override
+  List<Object> get props => [data];
+}

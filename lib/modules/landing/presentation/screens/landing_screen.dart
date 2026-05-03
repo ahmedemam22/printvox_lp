@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:printvox_lp/core/extensions/responsive_extension.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../di/injection.dart';
 import '../bloc/landing_bloc.dart';
@@ -146,6 +147,10 @@ class _LandingContentState extends State<_LandingContent> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LandingBloc, LandingState>(
+      buildWhen: (previous, current) => 
+          current is LandingLoading || 
+          current is LandingLoaded || 
+          current is LandingError,
       builder: (context, state) {
         if (state is LandingLoading) {
           return Center(
@@ -202,7 +207,8 @@ class _LandingContentState extends State<_LandingContent> {
               SliverToBoxAdapter(
                 child: RepaintBoundary(child: ContactSectionWidget(key: _contactKey)),
               ),
-              const SliverToBoxAdapter(child: FooterWidget()),
+              if (context.isDesktop)
+                const SliverToBoxAdapter(child: FooterWidget()),
             ],
           );
         }

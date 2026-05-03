@@ -43,7 +43,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get heroFullName => 'الاسم الكامل';
 
   @override
-  String get heroPhone => 'رقم الجوال';
+  String get heroPhone => 'رقم الموبيل';
 
   @override
   String get heroOrderDetails => 'تفاصيل طلبك';
@@ -61,7 +61,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get valLocation => 'شارع ناهيا، بولاق الدكرور';
 
   @override
-  String get lblPhone => 'الجوال';
+  String get lblPhone => 'الموبيل';
 
   @override
   String get valPhone => '+20 110 011 3901';
@@ -185,4 +185,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get whyUsDeliveryDesc => 'شحن آمن لجميع المدن مع تتبع مباشر.';
+
+  @override
+  String get formSuccessTitle => 'تم إرسال طلبك!';
+
+  @override
+  String get formSuccessMessage => 'سيتم التواصل معك في أقرب وقت.';
+
+  @override
+  String get formErrorMessage => 'حدث خطأ أثناء الإرسال.';
 }

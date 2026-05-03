@@ -33,3 +33,16 @@ class LandingError extends LandingState {
   @override
   List<Object> get props => [message];
 }
+
+class FormSubmitting extends LandingState {}
+
+class FormSubmitted extends LandingState {}
+
+class FormError extends LandingState {
+  final String message;
+
+  const FormError({required this.message});
+
+  @override
+  List<Object> get props => [message];
+}

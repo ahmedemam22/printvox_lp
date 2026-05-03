@@ -16,7 +16,38 @@ class PortfolioWidget extends StatefulWidget {
 }
 
 class _PortfolioWidgetState extends State<PortfolioWidget> {
+  final ScrollController _tabScrollController = ScrollController();
   String _selectedCategory = 'Packaging';
+
+  final Map<String, GlobalKey> _tabKeys = {
+    'Packaging': GlobalKey(),
+    'Branding': GlobalKey(),
+    'Print': GlobalKey(),
+    'Large Format': GlobalKey(),
+  };
+
+  @override
+  void dispose() {
+    _tabScrollController.dispose();
+    super.dispose();
+  }
+
+  void _onTabSelected(String category) {
+    setState(() => _selectedCategory = category);
+
+    // Animate to center the selected tab only on mobile/tablet
+    if (!context.isDesktop) {
+      final key = _tabKeys[category];
+      if (key != null && key.currentContext != null) {
+        Scrollable.ensureVisible(
+          key.currentContext!,
+          duration: const Duration(milliseconds: 500),
+          alignment: 0.5, // Center the tab
+          curve: Curves.easeInOut,
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,29 +81,34 @@ class _PortfolioWidgetState extends State<PortfolioWidget> {
           
           /// 🏷 FILTER TABS
           SingleChildScrollView(
+            controller: _tabScrollController,
             scrollDirection: Axis.horizontal,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TabButton(
+                  key: _tabKeys['Packaging'],
                   title: context.l10n.tabPackaging, 
                   isSelected: _selectedCategory == 'Packaging',
-                  onTap: () => setState(() => _selectedCategory = 'Packaging'),
+                  onTap: () => _onTabSelected('Packaging'),
                 ),
                 TabButton(
+                  key: _tabKeys['Branding'],
                   title: context.l10n.tabBranding, 
                   isSelected: _selectedCategory == 'Branding',
-                  onTap: () => setState(() => _selectedCategory = 'Branding'),
+                  onTap: () => _onTabSelected('Branding'),
                 ),
                 TabButton(
+                  key: _tabKeys['Print'],
                   title: context.l10n.tabPrint, 
                   isSelected: _selectedCategory == 'Print',
-                  onTap: () => setState(() => _selectedCategory = 'Print'),
+                  onTap: () => _onTabSelected('Print'),
                 ),
                 TabButton(
+                  key: _tabKeys['Large Format'],
                   title: context.l10n.tabLargeFormat, 
                   isSelected: _selectedCategory == 'Large Format',
-                  onTap: () => setState(() => _selectedCategory = 'Large Format'),
+                  onTap: () => _onTabSelected('Large Format'),
                 ),
               ],
             ),
